@@ -36,7 +36,7 @@ export default {
   margin: 12px 0;
   padding: 12px;
   word-break: break-word;
-  font-size: 16px;
+  font-size: 20px;
   transition: transform 0.3s ease;
 }
 

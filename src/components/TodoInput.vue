@@ -26,7 +26,7 @@ export default {
   data() {
     return {
       errorMessage: '',
-      forbiddenWords: ['fuck']
+      forbiddenWords: ['fuck', 'shit', 'dirty']
     }
   },
   watch: {

@@ -41,6 +41,7 @@ export default {
       editedText: ''
     }
   },
+
   computed: {
     filteredTodos() {
       if (this.filter === 'completed') {
@@ -48,6 +49,7 @@ export default {
       }
       return this.todos;
     },
+    
     inputText: {
       get() {
         return this.editingIndex === null ? this.todo : this.editedText;
@@ -61,6 +63,7 @@ export default {
       }
     }
   },
+
   methods: {
     addTodo() {
       const trimmed = this.todo.trim();
@@ -74,17 +77,20 @@ export default {
         this.errorMessage = '';
       }
     },
+
     removeTodo(index) {
       const realIndex = this.todos.findIndex(todo => todo.id === this.filteredTodos[index].id);
       if (realIndex !== -1) {
         this.todos.splice(realIndex, 1);
       }
     },
+
     startEdit(index) {
       const todo = this.filteredTodos[index];
       this.editingIndex = this.todos.findIndex(t => t.id === todo.id);
       this.editedText = todo.text;
     },
+
     confirmEdit() {
       const trimmed = this.editedText.trim();
       if (trimmed !== '') {
@@ -94,12 +100,14 @@ export default {
       this.editedText = '';
     }
   },
+
   created() {
     const saved = localStorage.getItem('todos');
     if (saved) {
       this.todos = JSON.parse(saved);
     }
   },
+
   watch: {
     todos: {
       handler(newList) {
